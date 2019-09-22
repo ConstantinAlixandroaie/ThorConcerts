@@ -1,0 +1,28 @@
+﻿@page
+@model ThorConcerts.Pages.ConcertModel
+@{
+    ViewData["Title"] = "Concert";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Concert</h1>
+
+
+@if (Model.IsError)
+{
+    <div>The API server returned @{Model.ErrorMessage}</div>
+}
+else
+{
+    <div>
+        <span id="concertName">@{Model.ViewModel.Name}</span>
+        <label for="concertName">Name: </label>
+
+        <span id="bandName">@{Model.ViewModel.BandName}</span>
+        <label for="bandName">Performing Band: </label>
+
+        <span id="capacity">@{Model.ViewModel.Capacity}</span>
+        <label for="capacity">Capacity: </label>
+    </div>
+}
+/**/
